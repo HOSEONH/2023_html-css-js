@@ -55,16 +55,15 @@ function todoAdd(e) {
 function todoCheck(e) {
     // 이벤트 객체를 통해서 이벤트가 실행된 태그 찾아서 값 사용
     const check = e.target;
-    const li = check.parentNode;
+    const li = check.parentNode; //parentNode/firstChild 중복 사용이 안되나..?
     // console.log(check.checked);
     if(check.checked) {
-        li.style.color = "gray";
-        li.style.textDecoration = "line-through";
+        li.firstChild.style.color = "gray";
+        li.firstChild.style.textDecoration = "line-through";
     } else {
-        li.style.color = "";
-        li.style.textDecoration = "";
+        li.firstChild.style.color = "";
+        li.firstChild.style.textDecoration = "";
     }
-    
 } 
 
 // 버튼에 클릭이벤트를 추가해서
