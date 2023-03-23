@@ -68,7 +68,7 @@ p {
 /* 메인의 섹션 */
 section {
     height: 400px; /* 픽셀로 쓰면 그 값은 고정된다 */
-    border: 1px solid black;
+    /* border: 1px solid black; */
 }
 /* 섹션1 배너 */
 .banner {
@@ -98,7 +98,8 @@ section {
     display: flex;
     align-items: center;
     /* background 전체에 이미지를 주려고 함 */
-    background-image : linear-gradient(rgba(184, 208, 240, 0.5), rgba(216, 176, 218, 0.5));
+    background-image : linear-gradient(rgba(184, 208, 240, 0.5), rgba(216, 176, 218, 0.5)),
+    url(../img/fox2.jpg);
     padding: 0 20px;   
     opacity: 0;
 }
@@ -117,7 +118,7 @@ section {
     padding: 0 30px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 25px;
-    /* 공간감주기 */
+    /* 공간주기 */
     box-shadow: 10px 10px 10px rgba(151, 151, 151, 0.5);
     /* 특정 위치로 이동 */
     transform: translateX(-600px);
@@ -130,7 +131,7 @@ section {
 }
 
 .intro-scroll .green-intro-image {
-    width: 100vw;
+    width: 100vw; /*옆으로 */
     /* inherit : 부모의 높이를 가져옴 */
     height: inherit;
 }
@@ -140,9 +141,123 @@ section {
     display: grid;
     grid-template-columns: 2fr 3fr;
 }
+.pictures .picture-wrap {
+    padding: 20px 30px;
+}
+.pictures .picture-wrap .picture-explan {
+    margin-bottom: 40px;
+}
+/* 버튼 디자인 */
+.pictures .picture-wrap .picture-buttons a {
+    background-color: transparent;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s;
+} 
+.pictures .picture-wrap .picture-buttons a.on {
+    background-color: black;
+    color: white;
+    transition: all 0.3s;
+} 
+
+/* 섹션4 뉴스 */
+.news-scroll h1 {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* 뉴스 카드 */
+.news-cards {
+    display: grid;
+    /* repeat 몇 번 반복 */
+    grid-template-columns: repeat(4, 1fr);
+    /* 간격 */
+    gap: 10px; 
+    margin: 0 20px;
+    /* justify-content: space-between; */
+}
+.card {
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.card .card-image-wrap {
+    height: 240px;
+    background-color: gray;
+    overflow: hidden;
+}
+/* 카드 글자 */
+.card .card-text {
+    padding: 20px;
+}
+.card .card-text h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.card .card-text p {
+    font-weight: bold;
+    color: rgb(114, 198, 255);
+}
+.card .card-text span {
+    /* float: right; */
+    color: gray;
+}
+
+.card .card-image-wrap .card-image {
+    /* 부모의 높이 */
+    height: inherit;
+    background-size: cover;
+}
+/* 카드에 마우스를 올렸을 때 전환 효과 */
+.card:hover .card-image-wrap .card-image {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    filter: brightness(0.7);
+}
+
+/* scrollon이 추가되었을 때 보이는 전환효과 */
+.news-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+}
+.news-scroll.scrollon {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 2s;
+}
+
+/* 카드의 이미지 */
+/* .card .card-image-wrap .card-image:nth-child(1)
+    는 .card-image-wrap안에서 .card-image가 첫번째인 것 모두
+    :nth-child() 사용할 때 그 시작점에 넣어주기
+*/
+.card:nth-child(1) .card-image-wrap .card-image {
+    background-image: url(../img/image.jpg);
+}
+.card:nth-child(2) .card-image-wrap .card-image {
+    background-image: url(../img/image2.jpg);
+}
+.card:nth-child(3) .card-image-wrap .card-image {
+    background-image: url(../img/image3.jpg);
+}
+.card:nth-child(4) .card-image-wrap .card-image {
+    background-image: url(../img/image4.jpg);
+}
 
 /* 푸터 */
 .footer {
+    box-sizing: border-box;
     height: 200px;
     background-color: black;
+    color: white;
+    padding: 40px 60px;
+    display: flex;
+}
+.footer .footer-text {
+    margin-left: 50px;
+    color: lightgray;
 }

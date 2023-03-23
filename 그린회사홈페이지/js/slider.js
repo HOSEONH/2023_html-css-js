@@ -13,25 +13,25 @@ const maxSlide = sliderItems.length; // 슬라이더 넘어가면 for문이 실�
 let currSlide = 1;
 
 // 다음 버튼을 눌렀을 때 left값이 이동
-nextButton.addEventListener("click", function(){
-    // 현재 슬라이더가 전체 갯수보다 작을 때 실행
+nextButton.addEventListener("click",function(){
+    // 현재 슬라이더가 전체갯수보다 작을때 실행
     if(currSlide<maxSlide) {
-        currSlide++; // 2> -100%, 3>-200px, 4>-300% >> 화면의 넓이 곱해서 이동 
-        // sliderItems를 통해서 모든 left값 이동
-        for (let i = 0; i<sliderItems.length; i++) {
-        sliderItems[i].style.left = `${100+(-100)*currSlide}%`;
+        currSlide++;  // 2> -100%, 3>-200%, 4>-300% >> 화면의넓이 곱해서이동
+        //sliderItems를 통해서 모든 left값 이동
+        for ( let i = 0; i<sliderItems.length; i++ ) {
+            sliderItems[i].style.left = `${100+(-100)*currSlide}%`
         }
     }
 })
 
 // 이전 버튼
-prevButton.addEventListener("click", function(){
-    // 현재 슬라이더가 1보다 클 때 실행
+prevButton.addEventListener("click",function(){
+    // 현재 슬라이더가 1보다 클때 실행
     if(currSlide>1) {
-        currSlide--; // 2> -100%, 3>-200px, 4>-300% >> 화면의 넓이 곱해서 이동 
-        // sliderItems를 통해서 모든 left값 이동
-        for (let i = 0; i<sliderItems.length; i++) {
-            sliderItems[i].style.left = `${100+(-100)*currSlide}%`;
+        currSlide--;  // 2> -100%, 3>-200%, 4>-300% >> 화면의넓이 곱해서이동
+        //sliderItems를 통해서 모든 left값 이동
+        for ( let i = 0; i<sliderItems.length; i++ ) {
+            sliderItems[i].style.left = `${100+(-100)*currSlide}%`
         }
     }
 })

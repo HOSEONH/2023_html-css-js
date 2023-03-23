@@ -15,14 +15,61 @@ const slider2Items = document.querySelectorAll(".slider2-item");
 
 // 버튼[1] 가져와서 확인 후 아래 내용 반복해서 사용
 // 버튼에 이벤트리스너 추가
-for(let i=0; i<slider2Buttons.length; i++) {
-    slider2Buttons[i].addEventListener("click", function(e) {// 각각의 버튼마다 이벤트 (클릭)이 들어감
+for(let i = 0; i <slider2Buttons.length; i++) {
+    slider2Buttons[i].addEventListener("click", function(e) {
         e.preventDefault();
         // forEach는 배열에 있는 각각의 값을 꺼내서
         // 콜백함수를 통해 쓸 수 있다
         // 배열.forEach(function(배열의 값, 인덱스){});
         slider2Items.forEach(function(item, index){
-            item.style.left = `${i*-100}%` // for에 들어가 있는 i
-        }); // 메소드 () forEach매개변수 값을 가져올 수 있다. callback...
+            item.style.left = `${i*-100}%`;
+            console.log(index);
+        });
+        // 메소드 () forEach매개변수 값을 가져올 수 있다. callback...
+        // a태그의 모든 on을 제거
+        for (let i =0 ;i<slider2Buttons.length; i++ ) {
+            slider2Buttons[i].classList.remove("on");
+        }
+        // 현재 a태그에 on을 추가
+        e.target.classList.add("on");
     })
 }
+
+/* 슬라이더 내부에 slider2-dots을 만들어서 버튼 작성 */
+// 형태 : div class="slider2-dots" : dot을 묶는 태그
+//        div class="dot" : 각 슬라이더로 이동하는 dot
+// 어떻게 추가 : slider2Items의 갯수에 따라서 생성 및 추가
+// 어느 위치에 추가 : slider2의 하단에 추가
+
+const dots = document.createElement("div");
+dots.classList.add("slider2-dots");
+
+// 생성
+for (let i = 0; i<slider2Items.length ;i++) {
+    const dot = document.createElement("div");
+    dot.classList.add("dot");
+    dots.appendChild(dot);
+    // dot에 이벤트 리스너 추가
+    dot.addEventListener("click", function (e){
+        // 각각의 슬라이더의 left값 수정
+        slider2Items.forEach(function(item){
+            item.style.left = `${i*-100}%`
+        });
+
+        // 함수안에 작성
+        // 모든 dot의 .on을 제외하고 현재 클릭한 dot만 .on
+        // 모든 dot? dots의 자식을 통해서 찾을 수 있다
+        // >> dots의 자식들을 반복해서 remove()
+        for (let i = 0; i<dots.children.length; i++) {
+            dots.children[i].classList.remove("on");
+        }
+
+        // 현재 dot은 무엇? 이벤트 객체
+        // e.target.classList.add()
+        // dot.addEventListener("click", function(e)
+        e.target.classList.add("on");
+    });
+}
+
+const slider2 = document.querySelector("#slider2");
+slider2.appendChild(dots);

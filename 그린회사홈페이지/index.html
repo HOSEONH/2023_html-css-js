@@ -53,13 +53,13 @@
         <!-- 섹션 3 사진(슬라이더 버튼) 시작 -->
         <a name="pictures"></a>
         <section class="pictures">
-            <div class="pictures-wrap">
-                <div class="pictures-explan">
+            <div class="picture-wrap">
+                <div class="picture-explan">
                     <h1>사진 설명</h1>
                     <p>자세한 설명</p>
                 </div>
-                <div class="pictures-buttons" id="slider2-buttons">
-                    <a href="">사진1</a>
+                <div class="picture-buttons" id="slider2-buttons">
+                    <a class="on" href="">사진1</a>
                     <a href="">사진2</a>
                     <a href="">사진3</a>
                 </div>
@@ -69,6 +69,13 @@
                 <div class="slider2-item"></div>
                 <div class="slider2-item"></div>
                 <div class="slider2-item"></div>
+                <!--
+                <div class="slider2-dots">
+                    <div class="dot on"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                -->
             </div>
 
         </section>
@@ -76,11 +83,62 @@
 
         <!-- 섹션 4 뉴스(스크롤이벤트) 시작 -->
         <a name="news"></a>
-        <section class="news-scroll"></section>
+        <section class="news-scroll">
+            <h1>회사 동향</h1>
+            <div class="news-cards">
+                <div class="card">
+                    <div class="card-image-wrap">
+                        <div class="card-image"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrap">
+                        <div class="card-image"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrap">
+                        <div class="card-image"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image-wrap">
+                        <div class="card-image"></div>
+                    </div>
+                    <div class="card-text">
+                        <p>보도자료</p>
+                        <h3>보도자료 제목</h3>
+                        <span>날짜</span>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- 섹션 4 뉴스 끝 -->
     </main>
     <!-- 푸터 시작 -->
-    <footer class="footer"></footer>
+    <footer class="footer">
+        <div>로고</div>
+        <div>
+            <p>전화번호</p>
+            <p>SNS</p>
+            <p>copy</p>
+        </div>
+    </footer>
     <!-- 푸터 끝 -->
 
     <script src="./js/scroll.js"></script>

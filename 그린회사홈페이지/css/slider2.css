@@ -54,3 +54,27 @@
     background-image: url(../img/fox2.jpg);
     background-size: cover;
 }
+
+/* 슬라이더 dot의 모양 */
+.slider2-dots {
+    position: absolute;
+    display: flex;
+    left: 45%; bottom: 20px;
+}
+.slider2-dots .dot {
+    /* 손가락모양으로 */
+    cursor: pointer;
+    /* 동그라미 크기 수정하고 */
+    width: 10px;
+    height: 10px;
+    background-color: rgba(41, 41, 41, 0.6);
+    border-radius: 50%;
+    /* 동그랗게 바꾸고 */
+    margin: 0 10px;
+    /* 서로를 띄워주고 */
+}
+
+.slider2-dots .dot:hover, 
+.slider2-dots .dot.on {
+    background-color: aliceblue;
+}
