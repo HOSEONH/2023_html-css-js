@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/slider2.css">
     <title>그린회사홈페이지</title>
 </head>
 <body>
@@ -32,18 +33,45 @@
                 <div class="slider-button prev" id="prev-button">&lt;<</div>
                 <div class="slider-button next" id="next-button">&gt;></div>
             </div>
-            <div id="scroll-icon">🔻</div>
+            <div class="scroll-icon"><a href="#intro">🔻</a></div>
         </section>
         <!-- 섹션 1 배너 끝 -->
 
         <!-- 섹션 2 소개(스크롤이벤트) 시작 -->
         <a name="intro"></a>
-        <section class="intro-scroll"></section>
+        <section class="intro-scroll" id="intro">
+            <div class="green-intro">
+                <h1>그린회사</h1>
+                <p>그린회사는 새로운 50년을 이끌어 갈 수 있도록 최선을 다하겠습니다.</p>
+            </div>
+            <div class="green-intro-image">
+                <div class="intro-image"></div>
+            </div>
+        </section>
         <!-- 섹션 2 소개(스크롤이벤트) 끝 -->
 
         <!-- 섹션 3 사진(슬라이더 버튼) 시작 -->
         <a name="pictures"></a>
-        <section class="pictures"></section>
+        <section class="pictures">
+            <div class="pictures-wrap">
+                <div class="pictures-explan">
+                    <h1>사진 설명</h1>
+                    <p>자세한 설명</p>
+                </div>
+                <div class="pictures-buttons" id="slider2-buttons">
+                    <a href="">사진1</a>
+                    <a href="">사진2</a>
+                    <a href="">사진3</a>
+                </div>
+            </div>
+            <!-- 다른 형태의 슬라이더 -->
+            <div id="slider2" class="slider2">
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+                <div class="slider2-item"></div>
+            </div>
+
+        </section>
         <!-- 섹션 3 사진 끝 -->
 
         <!-- 섹션 4 뉴스(스크롤이벤트) 시작 -->
@@ -57,5 +85,6 @@
 
     <script src="./js/scroll.js"></script>
     <script src="./js/slider.js"></script>
+    <script src="./js/slider2.js"></script>
 </body>
 </html>

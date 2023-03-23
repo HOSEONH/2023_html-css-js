@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
 /* 태그 디자인 */
 /* 부드러운 스크롤 */
 html {
@@ -6,6 +12,16 @@ html {
 a {
     color: black;
     text-decoration: none;
+    font-family: 'TheJamsil5Bold';
+}
+h1 { font-size: 3.5rem;
+    margin: 20px 0;
+    /* 위 아래만 글자 띄움 */
+    font-weight: bold;
+    font-family: 'TheJamsil5Bold';
+}
+p {
+    font-family: 'TheJamsil5Bold';
 }
 
 /* 헤더와 네비게이션바 */
@@ -54,8 +70,75 @@ section {
     height: 400px; /* 픽셀로 쓰면 그 값은 고정된다 */
     border: 1px solid black;
 }
+/* 섹션1 배너 */
 .banner {
     height: 100vh;
+}
+.banner .scroll-icon {
+    position: absolute;
+    bottom: 50px; left: 50%;
+    font-size: 2rem;
+    transform: translate(0, 20px);
+    /* x축은 움직이지 않고 y축만 움직여줄 수 있다. */
+    animation-name: movingIcon;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    /* 반복횟수 */
+}
+/* 아이콘이 위아래로 움직이는 애니메이션 작성 */
+@keyframes movingIcon {
+    0% {transform: translate(0, 0);}
+    70% {transform: translate(0, 20px);}
+    100% {transform: translate(0, 0);}
+}
+
+/* 섹션 2 소개 */
+/* 스크롤과 스크롤 안에 있는 각각의 내용들 들고와서 넣어준다 */
+.intro-scroll {
+    display: flex;
+    align-items: center;
+    /* background 전체에 이미지를 주려고 함 */
+    background-image : linear-gradient(rgba(184, 208, 240, 0.5), rgba(216, 176, 218, 0.5));
+    padding: 0 20px;   
+    opacity: 0;
+}
+/* 이벤트로 클래스가 붙었을 때 디자인 */
+.intro-scroll.scrollon {
+    opacity: 1;
+    transition: all 2s;
+}
+
+.intro-scroll .green-intro {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* 공간 맞춰주기 */
+    padding: 0 30px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    /* 공간감주기 */
+    box-shadow: 10px 10px 10px rgba(151, 151, 151, 0.5);
+    /* 특정 위치로 이동 */
+    transform: translateX(-600px);
+}
+
+/* 이벤트 발생시 추가되는 클래스 */
+.intro-scroll.scrollon .green-intro {
+    transform: translateX(0);
+    transition: all 3s;
+}
+
+.intro-scroll .green-intro-image {
+    width: 100vw;
+    /* inherit : 부모의 높이를 가져옴 */
+    height: inherit;
+}
+
+/* 섹션3 슬라이더 버튼 */
+.pictures {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
 }
 
 /* 푸터 */
